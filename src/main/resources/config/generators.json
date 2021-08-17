@@ -1,0 +1,32 @@
+{
+  "generators": [
+    {
+      "generatorId": 1,
+      "generatorSettings": {
+        "buyCost": 250,
+        "upgradeCost": 500,
+        "nextGenerator": 2,
+        "generatorItem": "TIER_ONE"
+      }
+    }
+  ],
+  "generatorItems": [
+    {
+      "itemId": "TIER_ONE",
+      "material": "DIRT",
+      "displayName": "&f&lTier One Dirt",
+      "lore": [
+        "&7&oThe most basic item a generator cane make.",
+        "&7(&b&oRight-Click&e to sell this&7)"
+      ],
+      "enchantments": [
+        "UNBREAKING:1"
+      ],
+      "itemFlags": [
+        "HIDE_ATTRIBUTES",
+        "HIDE_ENCHANTS"
+      ],
+      "sellPrice": 25
+    }
+  ]
+}

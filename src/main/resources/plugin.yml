@@ -1,0 +1,7 @@
+name: MyPlugin
+version: ${project.version}
+main: com.burchard36.MyPlugin
+api-version: 1.16
+prefix: Generators
+authors: [ DaltonBurchard ]
+description: Generator plugin
