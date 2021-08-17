@@ -8,6 +8,7 @@ public class Logger {
 
     private static final String prefix = "&6Saiyan&eGens&6Z ";
 
+
     public static void debug(final String message) {
         if (MyPlugin.DEBUG) {
             System.out.println(ofString(prefix + "&b:: &2DEBUG &b:: &a" + message));

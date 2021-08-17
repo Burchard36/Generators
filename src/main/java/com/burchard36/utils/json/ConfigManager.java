@@ -5,6 +5,7 @@ import com.burchard36.utils.Logger;
 import com.burchard36.utils.events.ConfigUpdateEvent;
 import com.burchard36.utils.json.generators.GeneratorConfig;
 import com.burchard36.utils.json.server.ServerConfig;
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -12,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,6 +25,8 @@ public class ConfigManager implements Listener {
     public ConfigManager(final MyPlugin plugin) {
         this.plugin = plugin;
         this.setConfigValues();
+
+        Bukkit.getPluginManager().registerEvents(this, this.plugin);
     }
 
     @EventHandler

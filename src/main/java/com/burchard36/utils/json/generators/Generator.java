@@ -4,6 +4,6 @@ import com.google.gson.JsonObject;
 
 public class Generator {
 
-    public int generatorId;
+    public String generatorId;
     public JsonObject generatorLocation;
 }

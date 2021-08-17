@@ -1,5 +1,9 @@
 {
   "player": {
     "maxStartingGenerators": 25
+  },
+
+  "server": {
+    "saveInterval": 5
   }
 }

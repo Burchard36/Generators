@@ -1,11 +1,10 @@
 {
   "generators": [
     {
-      "generatorId": 1,
+      "generatorId": "level_one",
       "generatorSettings": {
-        "buyCost": 250,
         "upgradeCost": 500,
-        "nextGenerator": 2,
+        "nextGenerator": "level_two",
         "generatorItem": "TIER_ONE"
       }
     }
