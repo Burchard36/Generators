@@ -4,6 +4,8 @@
   },
 
   "server": {
-    "saveInterval": 5
+    "saveInterval": 5,
+    "debugMode": true,
+    "texturePack": "DROP BOX LINK GOES HERE"
   }
 }

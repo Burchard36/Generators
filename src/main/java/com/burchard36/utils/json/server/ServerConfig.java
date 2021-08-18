@@ -7,9 +7,15 @@ import com.google.gson.JsonObject;
 public class ServerConfig {
 
     public JsonObject player;
+    public JsonObject server;
 
     public PlayerConfig getPlayerConfig() {
         final Gson gson = MyPlugin.INSTANCE.getGson();
-        return gson.fromJson(player, PlayerConfig.class);
+        return gson.fromJson(this.player, PlayerConfig.class);
+    }
+
+    public ServerSettings getServerSettings() {
+        final Gson gson = MyPlugin.INSTANCE.getGson();
+        return gson.fromJson(this.server, ServerSettings.class);
     }
 }
