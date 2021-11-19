@@ -5,13 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.burchard36</groupId>
-    <artifactId>MyPlugin</artifactId>
+    <artifactId>Generators</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>MyPlugin</name>
+    <name>Generators</name>
 
-    <description>Generator plugin</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,22 +57,29 @@
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
+
+        <!-- JitPack for GitHub projects -->
+        <repository>
+            <id>jitpack.io</id>
+            <!-- This has "www" because: https://stackoverflow.com/questions/54928706/error-in-library-built-with-jitpack-unable-to-resolve-dependency-for-appdebu -->
+            <url>https://www.jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <version>1.17.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <!-- My own plugin API -->
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.7</version>
+            <groupId>com.github.Burchard36</groupId>
+            <artifactId>BurchAPI</artifactId>
+            <version>01-AB-08</version>
+            <scope>compile</scope>
         </dependency>
-
     </dependencies>
 </project>
