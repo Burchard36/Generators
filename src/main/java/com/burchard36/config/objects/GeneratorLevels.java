@@ -1,6 +1,6 @@
 package com.burchard36.config.objects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 import org.bukkit.Material;
 
 import java.util.ArrayList;
@@ -9,16 +9,16 @@ import java.util.List;
 
 public class GeneratorLevels {
 
-    @JsonProperty("material")
+    @SerializedName(value = "material")
     public String materialType;
 
-    @JsonProperty("generated_materials")
+    @SerializedName(value = "generated_materials")
     public List<String> generatedMaterials;
 
-    @JsonProperty("next_level")
+    @SerializedName(value = "next_level")
     public int nextLevel;
 
-    @JsonProperty("level_costs")
+    @SerializedName(value = "level_costs")
     public HashMap<String, Integer> levelCosts;
 
     public GeneratorLevels() {
