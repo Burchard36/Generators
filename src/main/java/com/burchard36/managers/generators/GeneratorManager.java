@@ -2,11 +2,16 @@ package com.burchard36.managers.generators;
 
 import com.burchard36.Configs;
 import com.burchard36.GeneratorsPlugin;
+import com.burchard36.inventory.ItemWrapper;
 import com.burchard36.lib.Generator;
 import com.burchard36.managers.Manager;
 import com.burchard36.managers.generators.data.GeneratorsData;
-import com.burchard36.managers.generators.data.JsonGeneratorData;
 import org.bukkit.Location;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 
@@ -48,5 +53,24 @@ public class GeneratorManager implements Manager {
 
     public final GeneratorsPlugin getPlugin() {
         return this.plugin;
+    }
+
+    private static class Listeners implements Listener {
+
+
+        public Listeners() {
+
+        }
+
+        @EventHandler
+        public void onBlockPlace(final BlockPlaceEvent e) {
+            final ItemWrapper placed = new ItemWrapper(e.getItemInHand());
+
+        }
+
+        @EventHandler
+        public void onBlockBreak(final BlockBreakEvent e) {
+
+        }
     }
 }

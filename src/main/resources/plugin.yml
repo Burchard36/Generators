@@ -1,4 +1,4 @@
-name: Generators
+name: GeneratorsPlugin
 version: '${project.version}'
-main: com.burchard36.Generators
+main: com.burchard36.GeneratorsPlugin
 api-version: 1.17

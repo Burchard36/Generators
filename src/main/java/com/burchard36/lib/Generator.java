@@ -20,12 +20,12 @@ public class Generator {
             public void run() {
 
             }
-        }.runTaskTimer(GeneratorsPlugin.INSTANCE, 0, )
+        }.runTaskTimer(GeneratorsPlugin.INSTANCE, 0, 20 * 3);
     }
 
 
     public void stopTask() {
-
+        this.runningTask.cancel();
     }
 
     public final void addLevel() {
@@ -36,7 +36,7 @@ public class Generator {
         this.generatorData.level = level;
     }
 
-    public final int getgeneratorLevel() {
+    public final int getGeneratorLevel() {
         return this.generatorData.level;
     }
 
