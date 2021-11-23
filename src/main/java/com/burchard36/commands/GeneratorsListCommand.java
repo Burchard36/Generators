@@ -1,8 +1,10 @@
 package com.burchard36.commands;
 
 import com.burchard36.GeneratorsPlugin;
+import com.burchard36.Logger;
 import com.burchard36.command.ApiCommand;
 import com.burchard36.gui.GeneratorListGui;
+import com.burchard36.inventory.PluginInventory;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -27,7 +29,14 @@ public class GeneratorsListCommand {
                     }
 
                     final GeneratorListGui gui = new GeneratorListGui(this.plugin.getGeneratorsConfig());
-                    gui.getInventoryPage(0).open(player);
+                    final PluginInventory inventory = gui.getInventoryPage(0);
+
+                    if (inventory == null) {
+                        Logger.error("Could not find page 0 of Generators List!");
+                        player.sendMessage(convert("&cAn internal error occured, please contact an admin or developer."));
+                        return;
+                    }
+                    inventory.open(player);
                 });
     }
 

@@ -5,6 +5,7 @@ import com.burchard36.config.GeneratorsConfig;
 import com.burchard36.inventory.ClickableItem;
 import com.burchard36.inventory.ItemWrapper;
 import com.burchard36.inventory.PluginInventory;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -76,6 +77,44 @@ public class GeneratorListGui {
     }
 
     public final PluginInventory getInventoryPage(final int page) {
-        return this.inventories.get(page);
+        final PluginInventory inventory = this.inventories.get(page);
+        if (inventory == null) return null;
+
+        // 45
+
+        final ItemWrapper backgroundWrapper = new ItemWrapper(new ItemStack(Material.BLACK_STAINED_GLASS_PANE))
+                .setDisplayName("&f ");
+        final ClickableItem backgroundItem = new ClickableItem(backgroundWrapper);
+
+        Material backButtonMaterial = Material.ARROW;
+        String backButtonName = "&e&l<<";
+        if (page == 0) {
+            backButtonMaterial = Material.BARRIER;
+            backButtonName = "&cYou can't go back!";
+        }
+        final ItemWrapper backButtonWrapper = new ItemWrapper(new ItemStack(backButtonMaterial))
+                .setDisplayName(backButtonName);
+        final ClickableItem backButtonItem = new ClickableItem(backButtonWrapper);
+
+        Material forwardButtonMaterial = Material.ARROW;
+        String forwardButtonName = "&e&l>>";
+        if ((this.inventories.size() - 1) == page) {
+            forwardButtonMaterial = Material.BARRIER;
+            forwardButtonName = "&cYou can't go forward!";
+        }
+        final ItemWrapper forwardButtonWrapper = new ItemWrapper(new ItemStack(forwardButtonMaterial))
+                .setDisplayName(forwardButtonName);
+        final ClickableItem forwardButtonItem= new ClickableItem(forwardButtonWrapper);
+
+        inventory.addClickableItemAtSlot(45, backgroundItem);
+        inventory.addClickableItemAtSlot(46, backgroundItem);
+        inventory.addClickableItemAtSlot(47, backgroundItem);
+        inventory.addClickableItemAtSlot(48, backButtonItem);
+        inventory.addClickableItemAtSlot(49, backgroundItem);
+        inventory.addClickableItemAtSlot(50, forwardButtonItem);
+        inventory.addClickableItemAtSlot(51, backgroundItem);
+        inventory.addClickableItemAtSlot(52, backgroundItem);
+        inventory.addClickableItemAtSlot(53, backgroundItem);
+        return inventory;
     }
 }

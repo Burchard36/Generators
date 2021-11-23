@@ -29,7 +29,7 @@ public class GeneratorsConfig extends JsonDataFile {
         this.levels = new ArrayList<>();
         this.settings = new GeneratorSettings();
 
-        this.levels.add(new GeneratorLevels("&e&k&oGenerator &7(&b&l1&7)",
+        this.levels.add(new GeneratorLevels("&e&l&oGenerator &7(&b&l1&7)",
                 new ArrayList<>(),
                 Material.END_PORTAL_FRAME,
                 1,
@@ -37,7 +37,7 @@ public class GeneratorsConfig extends JsonDataFile {
                 new ArrayList<>(),
                 new HashMap<>()));
 
-        this.levels.add(new GeneratorLevels("&e&k&oGenerator &7(&b&l2&7)",
+        this.levels.add(new GeneratorLevels("&e&l&oGenerator &7(&b&l2&7)",
                 new ArrayList<>(),
                 Material.END_PORTAL_FRAME,
                 2,

@@ -30,7 +30,6 @@ public class GeneratorSettings {
         this.perGeneratorSettings = new PerGeneratorSettings();
     }
 
-
     public final GenerationMode getGenerationMode() {
         return GenerationMode.valueOf(this.generateMode);
     }
